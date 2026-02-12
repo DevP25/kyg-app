@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { SenatorsController } from './senators/senators.controller';
+import { ConfigModule } from '@nestjs/config';
+import { SenatorsModule } from './senators/senators.module';
 
 @Module({
-  controllers: [SenatorsController],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // makes env available everywhere
+    }),
+    SenatorsModule,
+  ],
 })
-
 export class AppModule {}

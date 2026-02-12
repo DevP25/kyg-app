@@ -1,15 +1,12 @@
 import { Controller, Get, Query } from '@nestjs/common';
+import { SenatorsService } from './senators.service';
 
 @Controller('senators')
 export class SenatorsController {
+  constructor(private readonly senatorsService: SenatorsService) {}
+
   @Get()
-  getSenators(@Query('state') state: string) {
-    return {
-      state,
-      senators: [
-        { name: 'Senator One', party: 'D' },
-        { name: 'Senator Two', party: 'R' },
-      ],
-    };
+  async getSenators(@Query('state') state: string) {
+    return this.senatorsService.getSenatorsByState(state);
   }
 }
