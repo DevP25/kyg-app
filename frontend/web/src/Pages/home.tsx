@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom"
+import './home.css'
+import Navbar from '../Components/navbar'
+import HomepageBanner from '../Components/homepageBanner'
 
 function Home() {
 
     return(
         <>
-            <h1> Home Page </h1>
-
-            <Link to="/Page1"> Go to Page 1 </Link>
+            <div>
+                <Navbar/>
+                <HomepageBanner/>
+            </div>
+            
         </>
     )
 }

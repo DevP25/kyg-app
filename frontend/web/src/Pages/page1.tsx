@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom"
+import Navbar from '../Components/navbar';
 
 function Page1() {
     const [selectedState, setSelectedState] = useState("");
@@ -58,8 +59,8 @@ function Page1() {
 
     return(
         <>
-            <Link to="/"> HOME </Link>
-            
+            <Navbar/>
+
             <h1> Page 1 </h1>
 
             <div>
